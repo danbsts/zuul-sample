@@ -1,0 +1,15 @@
+version: '3'
+services:
+  fibonacci:
+    build: ./fibonacci-api
+    ports:
+      - 8080:8080
+  power:
+    build: ./power-api
+    ports:
+      - 5000:5000
+  eureka: 
+    image: springcloud/eureka
+    ports:
+      - "8761:8761"
+  # zuul:
