@@ -3,3 +3,8 @@ micronaut:
     name: powerApi
   server:
     port: 5000
+eureka:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "http://eureka:8761"

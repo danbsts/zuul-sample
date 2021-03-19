@@ -3,3 +3,8 @@ micronaut:
     name: fibonacciApi
   server:
     port: 8080
+eureka:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "http://eureka:8761"
