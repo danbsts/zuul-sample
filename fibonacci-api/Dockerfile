@@ -1,4 +1,7 @@
-FROM openjdk:8-jdk-slim
-WORKDIR /api
-COPY build/libs/fibonacci-api-0.1-all.jar ./api.jar
-CMD ["java", "-jar", "api.jar"]
+FROM python:3.7
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . /app
+ENTRYPOINT [ "python" ]
+CMD [ "-m", "flask", "run", "--host", "0.0.0.0", "--port", "8080" ]
